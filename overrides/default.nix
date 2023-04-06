@@ -730,7 +730,7 @@ lib.composeManyExtensions [
           nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
             pkgs.rustPlatform.cargoSetupHook
             pkgs.rustPlatform.maturinBuildHook
-            pkgs.setuptools-scm
+            self.setuptools-scm
           ];
         });
       emmett-crypto =
@@ -760,7 +760,7 @@ lib.composeManyExtensions [
           nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
             pkgs.rustPlatform.cargoSetupHook
             pkgs.rustPlatform.maturinBuildHook
-            pkgs.setuptools-scm
+            self.setuptools-scm
           ];
         });
       gitpython = super.gitpython.overridePythonAttrs (
