@@ -586,13 +586,6 @@ lib.composeManyExtensions [
         '';
       });
 
-      emmett-crypto = super.emmett-crypto.overridePythonAttrs (
-        old: {
-          buildInputs = (old.buildInputs or [ ]) ++ [ pkgs.maturin ];
-          doCheck = false;
-        }
-      );
-
       # Environment markers are not always included (depending on how a dep was defined)
       enum34 = if self.pythonAtLeast "3.4" then null else super.enum34;
 
