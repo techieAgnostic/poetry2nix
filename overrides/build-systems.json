@@ -4877,6 +4877,9 @@
     "setuptools",
     "setuptools-scm"
   ],
+  "emmett-crypto" [
+    "maturin"
+  ],
   "emoji": [
     "setuptools"
   ],
