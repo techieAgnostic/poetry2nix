@@ -762,6 +762,9 @@ lib.composeManyExtensions [
             pkgs.rustPlatform.maturinBuildHook
             self.setuptools-scm
           ];
+          buildInputs = (old.buildInputs or [ ]) ++ [
+            self.watchfiles
+          ];
         });
       gitpython = super.gitpython.overridePythonAttrs (
         old: {
