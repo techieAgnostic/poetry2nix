@@ -704,8 +704,8 @@ lib.composeManyExtensions [
       );
 
       renoir = super.renoir.overridePythonAttrs (old: rec {
-        buildInputs = old.buildInputs ++ [
-          super.poetry
+        propagatedBuildInputs = old.propagatedBuildInputs ++ [
+          self.poetry
         ];
       });
 
