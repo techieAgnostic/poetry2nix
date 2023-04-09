@@ -758,6 +758,7 @@ lib.composeManyExtensions [
             self.watchfiles
           ];
           nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
+            self.watchfiles
             pkgs.rustPlatform.cargoSetupHook
             pkgs.rustPlatform.maturinBuildHook
             self.setuptools-scm
