@@ -719,6 +719,10 @@ lib.composeManyExtensions [
       });
 
       severus = super.severus.overridePythonAttrs (old: rec {
+        postInstall = ''
+          rm $out/lib/python3.10/site-packages/CHANGES.md
+          rm -rf $out/lib/python3.10/site-packages/docs
+        '';
         nativeBuildInputs = old.nativeBuildInputs ++ [
           super.poetry
           super.pyyaml
