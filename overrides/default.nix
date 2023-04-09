@@ -707,7 +707,7 @@ lib.composeManyExtensions [
         postInstall = ''
           rm -rf $out/lib/python3.10
         '';
-        propagatedBuildInputs = [ super.poetry ];
+        nativeBuildInputs = [ super.poetry ];
       });
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
