@@ -704,13 +704,12 @@ lib.composeManyExtensions [
       );
 
       renoir = super.renoir.overridePythonAttrs (old: rec {
-        propagatedBuildInputs = old.propagatedBuildInputs ++ [ super.poetry ];
+        buildInputs = old.buildInputs ++ [
+          super.poetry
+        ];
       });
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
-        propagatedBuildInputs = old.propagatedBuildInputs ++ [
-          super.poetry
-        ];
         nativeBuildInputs = old.nativeBuildInputs ++ [
           super.renoir
         ];
