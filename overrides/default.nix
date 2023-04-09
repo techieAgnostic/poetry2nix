@@ -703,6 +703,10 @@ lib.composeManyExtensions [
         }
       );
 
+      cozo_embedded = super.cozo_embedded.overridePythonAttrs (old: rec {
+        nativeBuildInputs = old.nativeBuildInputs ++ [ pkgs.stdenv.cc.cc.lib ];
+      });
+      
       renoir = super.renoir.overridePythonAttrs (old: rec {
         postInstall = ''
           rm $out/lib/python3.10/site-packages/CHANGES.md
