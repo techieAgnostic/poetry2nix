@@ -709,7 +709,7 @@ lib.composeManyExtensions [
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
         propagatedBuildInputs = old.propagatedBuildInputs ++ [
-          super.renoir
+          super.poetry
         ];
         nativeBuildInputs = old.nativeBuildInputs ++ [
           super.renoir
