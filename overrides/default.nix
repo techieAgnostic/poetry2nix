@@ -704,17 +704,17 @@ lib.composeManyExtensions [
       );
 
       renoir = super.renoir.overridePythonAttrs (old: rec {
-        nativeBuildInputs = [ super.poetry ];
+        nativeBuildInputs = old.nativeBuildInputs ++ [ super.poetry ];
       });
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
-        nativeBuildInputs = [
+        nativeBuildInputs = old.nativeBuildInputs ++ [
           super.renoir
         ];
       });
 
       severus = super.severus.overridePythonAttrs (old: rec {
-        propagatedBuildInputs = [
+        nativeBuildInputs = old.nativeBuildInputs ++ [
           super.poetry
           super.pyyaml
         ];
