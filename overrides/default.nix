@@ -707,6 +707,10 @@ lib.composeManyExtensions [
         propagatedBuildInputs = [ super.poetry ];
       });
 
+      severus = super.severus.overridePythonAttrs (old: rec {
+        propagatedBuildInputs = [ super.poetry ];
+      });
+
       granian =
         let
           getRepoHash = version: {
