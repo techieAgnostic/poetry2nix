@@ -753,8 +753,8 @@ lib.composeManyExtensions [
           cargoDeps = pkgs.rustPlatform.importCargoLock {
             lockFile = "${src.out}/Cargo.lock";
           };
-          propagatedBuildInputs = old.propagatedBuildInputs ++ [
-            super.watchfiles
+          buildInputs = old.buildInputs ++ [
+            self.watchfiles
           ];
           nativeBuildInputs = (old.nativeBuildInputs or [ ]) ++ [
             pkgs.rustPlatform.cargoSetupHook
