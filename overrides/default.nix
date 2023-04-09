@@ -704,9 +704,6 @@ lib.composeManyExtensions [
       );
 
       renoir = super.renoir.overridePythonAttrs (old: rec {
-        postInstall = ''
-          echo hello world
-        '';
         nativeBuildInputs = [ super.poetry ];
       });
 
