@@ -703,6 +703,10 @@ lib.composeManyExtensions [
         }
       );
 
+      renoir = super.renoir.overridePythonAttrs (old: rec {
+        propagatedBuildInputs = [ super.poetry ];
+      });
+
       granian =
         let
           getRepoHash = version: {
