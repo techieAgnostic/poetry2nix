@@ -714,6 +714,12 @@ lib.composeManyExtensions [
       });
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
+        nativeBuildInputs = old.nativeBuildInputs ++ [
+          self.watchfiles
+        ];
+        buildInputs = old.buildInputs ++ [
+          self.watchfiles
+        ];
         propagatedBuildInputs = old.propagatedBuildInputs ++ [
           self.watchfiles
         ];
