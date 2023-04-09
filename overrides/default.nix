@@ -710,6 +710,12 @@ lib.composeManyExtensions [
         propagatedBuildInputs = [ super.poetry ];
       });
 
+      emmett = super.emmett.overridePythonAttrs (old: rec {
+        propagatedBuildInputs = [
+          super.renoir
+        ];
+      });
+
       severus = super.severus.overridePythonAttrs (old: rec {
         propagatedBuildInputs = [
           super.poetry
