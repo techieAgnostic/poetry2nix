@@ -711,7 +711,6 @@ lib.composeManyExtensions [
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
         propagatedBuildInputs = old.propagatedBuildInputs ++ [
-          super.renoir
         ];
       });
 
