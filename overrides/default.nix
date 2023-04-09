@@ -708,7 +708,10 @@ lib.composeManyExtensions [
       });
 
       severus = super.severus.overridePythonAttrs (old: rec {
-        propagatedBuildInputs = [ super.poetry ];
+        propagatedBuildInputs = [
+          super.poetry
+          super.pyyaml
+        ];
       });
 
       granian =
