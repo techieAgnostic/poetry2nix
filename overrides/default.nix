@@ -704,7 +704,7 @@ lib.composeManyExtensions [
       );
 
       renoir = super.renoir.overridePythonAttrs (old: rec {
-        buildInputs = old.buildInputs ++ [ super.poetry ];
+        nativeBuildInputs = old.nativeBuildInputs ++ [ super.poetry ];
       });
 
       emmett = super.emmett.overridePythonAttrs (old: rec {
@@ -753,6 +753,7 @@ lib.composeManyExtensions [
             self.setuptools-scm
           ];
         });
+        
       emmett-crypto =
         let
           getRepoHash = version: {
@@ -779,6 +780,7 @@ lib.composeManyExtensions [
             self.watchfiles
           ];
         });
+      
       gitpython = super.gitpython.overridePythonAttrs (
         old: {
           buildInputs = (old.buildInputs or [ ]) ++ [ self.typing-extensions ];
